@@ -988,12 +988,27 @@ font-family: 'Roboto', sans-serif;
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
   font-style: italic;
+  padding-left: 15px;
+  padding-right:15px;
+}
+.pIN {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: -15px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  padding-left: 15px;
+  padding-right:15px;
 }
 .pIN {
   text-align: center;
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
   font-style: italic;
+}
+.polarLink {
+  text-decoration: none;
 }
 .achiraL {
   font-family: 'Satisfy', cursive;  
