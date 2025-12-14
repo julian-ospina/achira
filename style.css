@@ -286,6 +286,7 @@
         font-family: 'Satisfy', cursive;
         color: #565454;
         line-height: 1.2em;
+        margin-bottom: 5rem;
 
       }
      .text-intro {
@@ -984,7 +985,7 @@ font-family: 'Roboto', sans-serif;
 .pI {
   text-align: center;
   padding-top: 10px;
-  padding-bottom: -15px;
+  padding-bottom: -10px;
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
   font-style: italic;
