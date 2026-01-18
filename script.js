@@ -22,3 +22,40 @@ toggleButton.addEventListener('click', () => {
   navbarMenu.classList.toggle('active');
 });
 
+
+// episodes
+
+
+  document.querySelectorAll(".accordion-header").forEach(header => {
+    header.addEventListener("click", () => {
+      const item = header.closest(".accordion-item");
+      item.classList.toggle("active");
+    });
+  });
+
+  // Auto-open episode from URL
+  window.addEventListener("load", () => {
+    const id = window.location.hash.replace("#", "");
+    if (!id) return;
+
+    const target = document.getElementById(id);
+    if (target) {
+      target.classList.add("active");
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+
+  // Search filter
+  const searchInput = document.getElementById("episodeSearch");
+  if (searchInput) {
+    searchInput.addEventListener("input", function () {
+      const value = this.value.toLowerCase();
+      document.querySelectorAll(".accordion-item").forEach(item => {
+        item.style.display = item.innerText.toLowerCase().includes(value)
+          ? "block"
+          : "none";
+      });
+    });
+  }
+
+  

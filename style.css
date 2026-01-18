@@ -227,26 +227,104 @@
 }
 
   
-    .banner {
-        background-image: url('img/banner-mountain1.png');
-        background-size: cover;
-        background-position: right;
-        height: 550px;
-        padding-top: 125px;
-        margin-top: 72px;
-        margin-bottom: 50px;
-        background-repeat: no-repeat;
-      }
-      .banner1 {
-        background-image: url('img/banner.jpg');
-        background-size: cover;
-        background-position: right;
-        height: 550px;
-        padding-top: 8.5rem;
-        margin-top: 80px;
-        margin-bottom: 50px;
-        background-repeat: no-repeat;
-      }
+     .banner,
+.banner1 {
+  min-height: 550px;   /* ✅ allows growth */
+  height: auto;        /* ✅ prevents clipping */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+   .banner {
+  position: relative;
+  min-height: 550px;
+  height: calc(100vh - 95px); /* optional but recommended */
+  overflow: hidden;
+}
+
+.banner-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+/* Text stays above the video */
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: 100%;
+  padding: 0 30px;
+  text-align: center;
+}
+
+.banner-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* Text stays above the video */
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: 100%;
+  padding: 0 30px;
+  text-align: center;
+}
+
+.intro-section {
+  max-width: 1000px;     /* controls line length */
+  margin: 0 auto;        /* centers the section */
+  padding: 2.5rem 2rem;
+  font-family: 'Roboto', sans-serif;
+  
+  font-size: 1.2rem;  /* side breathing room */
+}
+
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 2rem 1.25rem;
+  }
+}
+  
+
+.banner-content {
+  max-width: 900px;   /* or 1000px */
+  width: 100%;
+  padding: 0 30px;    /* safe side spacing */
+  text-align: center;
+}
+
+.banner-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 6vw, 6rem);
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+
+.banner-intro {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+  color: #6d6d6d;
+  line-height: 1.5;
+}
 
       .hidden-text {
         font-size: 45px;
@@ -265,30 +343,26 @@
       }
      
       .banner-text {
-        font-size: 55px;
-        margin-top: -75px;
-        margin-left: 20px;
-        padding-left: 16px;
-        max-width: 50%;
-        max-height: 20%;
-        font-family: 'Satisfy', cursive;
-        color: #333333;
-        line-height: 1.2em;
-        font-size: 4.5rem;
-      }
-      .banner-text1 {
-        font-size: 4.5rem;
-        margin-top: -113px;
-        margin-left: 20px;
-        padding-left: 16px;
-        max-width: 45%;
-        max-height: 20%;
-        font-family: 'Satisfy', cursive;
-        color: #565454;
-        line-height: 1.2em;
-        margin-bottom: 5rem;
+  font-family: 'Playfair Display', serif;
+  color: #333333;
+  line-height: 1.2em;
+  font-size: 4.5rem;
+  max-width: 50%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
 
-      }
+     .banner-text1 {
+  font-family: 'Playfair Display', serif;
+  color: #565454;
+  line-height: 1.2em;
+  font-size: 4.5rem;
+  max-width: 45%;
+  text-align: center;
+  margin: 0;
+}
+
      .text-intro {
         font-size: 26px;
         margin-top: 87px;
@@ -366,7 +440,7 @@
         font-weight: bold;
         text-align: center;
         font-family: 'Playfair Display', serif;
-        font-size: 2.8rem;
+        font-size: 3rem;
       }
       .motivationalC {
         
@@ -396,7 +470,7 @@
         margin-top: 120px ;
         text-align: center;
         font-size: 4rem;
-        font-family: 'Satisfy', cursive !important;
+        font-family: 'Playfair Display', serif !important;
       }
       .motivationalC {
         margin-bottom: 10px;
@@ -481,14 +555,32 @@
     line-height: 2rem;
     color: #565454;
 }
-      
+      .banner-intro a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.banner-intro a:hover {
+  color: #2f6fdc; 
+}
+     .podcast-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.podcast-link:hover {
+  color: #2f6fdc; 
+}
+
       .btn-request {
         text-align: center;
         margin: 25px 0px;      
       }
       .btn-requestA {
         text-align: center;
-        margin: 21px 0px;
+        margin: 30px 0px;
         margin-bottom: 96px;    
       }
       .btnR {
@@ -785,7 +877,7 @@ button[type="submit"]:hover {
 .logo img{
   width: 216px;
   height: 93px;
-  margin: 20px 0px;
+  margin: 60px 0px 20px 0px;
 }
 .social-icons {
   display: flex;
@@ -1147,5 +1239,194 @@ p {
   }
 }
 
+/* episodes*/
+
+/* GRID */
+.accordion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .accordion-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CARD */
+.episode-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.episode-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* IMAGE */
+.episode-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* HEADER */
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  border: none;
+  background: #f7f7f7;
+  font-size: 1rem;
+  width: 100%;
+}
+
+/* CONTENT */
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 1rem;
+}
+
+.episode-card.active .accordion-panel {
+  max-height: 800px;
+  padding-bottom: 1rem;
+}
+
+/* ICON */
+.accordion-icon {
+  transition: transform 0.3s ease;
+}
+
+.episode-card.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.achira-section {
+  padding: 3rem 3rem 0rem 3rem;
+}
+
+.achira-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* LEFT TEXT */
+.achira-text {
+  flex: 1;
+  font-family: 'Roboto', sans-serif;
+  color: #565454;
+  font-size: 1.3rem;
+  line-height: 1.8;
+}
+
+.achira-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.6rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.achira-lead {
+  font-size: 1.35rem;
+  margin-bottom: 1.5rem;
+}
+
+/* RIGHT IMAGE */
+.achira-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.achira-image img {
+  width: 100%;
+  max-width: 480px;
+  max-height: 620px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .achira-container {
+   flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .achira-title {
+    font-size: 2.6rem;
+  }
+
+  .achira-image img {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .achira-text {
+    text-align: left;
+  }
+}
+@media (max-width: 768px) {
+  .banner-intro {
+    padding-top: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .achira-section {
+    padding: 2rem 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .motivational {
+    margin-top: 1rem;
+  }
+}
 
 
+@media (max-width: 768px) {
+  .achira-section {
+    padding-bottom: 0rem;
+  }
+}
+@media (max-width: 768px) {
+  .intro-section {
+    padding-top: 0rem;
+  }
+}
+
+
+.poem {
+  font-style: italic;
+}
+  .content-section {
+    padding: 90px 10px 20px;
+  }
+
+  /* Prevent text clipping on small screens */
+@media (max-width: 768px) {
+  .custom-section,
+  .custom-sectionA,
+  .custom-sectionA2,
+  .custom-sectionA3,
+  .custom-sectionA4,
+  .custom-sectionI,
+  .custom-sectionH {
+    overflow: visible;
+  }
+}
