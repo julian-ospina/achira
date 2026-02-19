@@ -1256,6 +1256,14 @@ margin: 3rem 0;
   }
 }
 
+@media (max-width: 600px) {
+  .gmail {
+    font-size: 1.35rem;   /* slightly smaller */
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+}
+
 /* CARD */
 .episode-card {
   background: #ffffff;
