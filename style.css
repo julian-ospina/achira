@@ -611,6 +611,7 @@
       .healing {
         margin: 45px 0px;
       }
+
       .accordion {
         background-color: #f5f5f5;
         border-radius: 10px;
@@ -1256,12 +1257,53 @@ margin: 3rem 0;
   }
 }
 
+.platform-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* space between logos */
+  margin: 20px 0;
+  flex-wrap: wrap; /* THIS is what makes it stack on mobile */
+}
+
+.platform-logos img {
+  width: 300px; /* adjust size here */
+  height: auto;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.platform-logos img:hover {
+  transform: scale(1.1);
+}
+
 @media (max-width: 600px) {
   .gmail {
     font-size: 1.35rem;   /* slightly smaller */
     word-break: break-word;
     overflow-wrap: anywhere;
+
   }
+
+  .subtitle {
+  
+  font-size: 1rem;
+  
+  
+}
+
+  .platform-logos img {
+    width: 200px
+  }
+
+
+  .platform-logos {
+ 
+  justify-content: left;
+  align-items: left;
+  margin: 20px 10px;
+  
+}
 }
 
 /* CARD */
@@ -1447,4 +1489,13 @@ object-fit: contain;
   .episode-image {
     height: 220px;
   }
+}
+
+.subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #333;
+  margin: 10px;
+  text-align: center;
+  
 }
